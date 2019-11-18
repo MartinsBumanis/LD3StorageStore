@@ -1,0 +1,13 @@
+C:\Users\Martins\Source\Repos\Stock\Stock\bin\Debug\Stock.exe.config
+C:\Users\Martins\Source\Repos\Stock\Stock\bin\Debug\Stock.exe
+C:\Users\Martins\Source\Repos\Stock\Stock\bin\Debug\Stock.pdb
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.Login.resources
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.Noliktava.resources
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.Produkti.resources
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.Properties.Resources.resources
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.StockMain.resources
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.csproj.GenerateResource.cache
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.csproj.CoreCompileInputs.cache
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.exe
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.pdb
+C:\Users\Martins\Source\Repos\Stock\Stock\obj\Debug\Stock.csprojAssemblyReference.cache
