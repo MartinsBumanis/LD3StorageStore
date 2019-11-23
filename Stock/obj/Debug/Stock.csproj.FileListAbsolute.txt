@@ -108,4 +108,3 @@ C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.csproj.CoreC
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.csproj.CopyComplete
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.exe
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.pdb
-C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.csprojAssemblyReference.cache
