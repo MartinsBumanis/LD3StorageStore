@@ -151,5 +151,12 @@ namespace Stock
         {
 
         }
+
+        private void galvenāLapaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockMain pro = new StockMain();
+            this.Hide();
+            pro.Show();
+        }
     }
 }

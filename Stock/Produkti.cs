@@ -137,5 +137,24 @@ namespace Stock
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void noToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Noliktava pro = new Noliktava();
+            this.Hide();
+            pro.Show();
+        }
+
+        private void galvenāLapaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockMain pro = new StockMain();
+            this.Hide();
+            pro.Show();
+        }
     }
 }

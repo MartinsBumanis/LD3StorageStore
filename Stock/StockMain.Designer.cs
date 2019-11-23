@@ -29,66 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sTockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockMain));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.menuStrip.SuspendLayout();
+            this.button3 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productsToolStripMenuItem,
-            this.sTockToolStripMenuItem,
-            this.reportToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1153, 24);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "MenuStrip";
-            // 
-            // productsToolStripMenuItem
-            // 
-            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.productsToolStripMenuItem.Text = "Products";
-            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
-            // 
-            // sTockToolStripMenuItem
-            // 
-            this.sTockToolStripMenuItem.Name = "sTockToolStripMenuItem";
-            this.sTockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.sTockToolStripMenuItem.Text = "Stock";
-            // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stockListToolStripMenuItem,
-            this.productListToolStripMenuItem});
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.reportToolStripMenuItem.Text = "Report";
-            // 
-            // stockListToolStripMenuItem
-            // 
-            this.stockListToolStripMenuItem.Name = "stockListToolStripMenuItem";
-            this.stockListToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.stockListToolStripMenuItem.Text = "Stock List";
-            // 
-            // productListToolStripMenuItem
-            // 
-            this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
-            this.productListToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.productListToolStripMenuItem.Text = "Product List";
             // 
             // statusStrip
             // 
@@ -96,7 +45,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 579);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1153, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1075, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -108,9 +57,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(154, 148);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.button1.Location = new System.Drawing.Point(31, 148);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(399, 273);
+            this.button1.Size = new System.Drawing.Size(312, 207);
             this.button1.TabIndex = 4;
             this.button1.Text = "Veikala Produkti";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,31 +68,42 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(611, 148);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.button2.Location = new System.Drawing.Point(380, 148);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(399, 273);
+            this.button2.Size = new System.Drawing.Size(312, 207);
             this.button2.TabIndex = 5;
             this.button2.Text = "Noliktava";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.button3.Location = new System.Drawing.Point(724, 148);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(312, 207);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Atskaites";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // StockMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 601);
+            this.ClientSize = new System.Drawing.Size(1075, 601);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip;
             this.Name = "StockMain";
-            this.Text = "StockMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Galvenā lapa";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StockMain_FormClosing);
             this.Load += new System.EventHandler(this.StockMain_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -151,18 +112,12 @@
         }
         #endregion
 
-
-        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sTockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stockListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productListToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

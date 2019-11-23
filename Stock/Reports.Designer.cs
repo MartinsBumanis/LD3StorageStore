@@ -40,6 +40,7 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.produktiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noliktavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.galvenāLapaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sumVeikals = new System.Windows.Forms.Button();
             this.reportButtonStorage = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -75,7 +76,7 @@
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 24);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(825, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(901, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,7 +90,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 48);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(825, 423);
+            this.reportViewer1.Size = new System.Drawing.Size(901, 574);
             this.reportViewer1.TabIndex = 1;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -106,10 +107,11 @@
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produktiToolStripMenuItem,
-            this.noliktavaToolStripMenuItem});
+            this.noliktavaToolStripMenuItem,
+            this.galvenāLapaToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(825, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(901, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -127,9 +129,16 @@
             this.noliktavaToolStripMenuItem.Text = "Noliktava";
             this.noliktavaToolStripMenuItem.Click += new System.EventHandler(this.noliktavaToolStripMenuItem_Click);
             // 
+            // galvenāLapaToolStripMenuItem
+            // 
+            this.galvenāLapaToolStripMenuItem.Name = "galvenāLapaToolStripMenuItem";
+            this.galvenāLapaToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.galvenāLapaToolStripMenuItem.Text = "Galvenā lapa";
+            this.galvenāLapaToolStripMenuItem.Click += new System.EventHandler(this.galvenāLapaToolStripMenuItem_Click);
+            // 
             // sumVeikals
             // 
-            this.sumVeikals.Location = new System.Drawing.Point(184, 9);
+            this.sumVeikals.Location = new System.Drawing.Point(226, 9);
             this.sumVeikals.Name = "sumVeikals";
             this.sumVeikals.Size = new System.Drawing.Size(119, 33);
             this.sumVeikals.TabIndex = 3;
@@ -139,7 +148,7 @@
             // 
             // reportButtonStorage
             // 
-            this.reportButtonStorage.Location = new System.Drawing.Point(309, 9);
+            this.reportButtonStorage.Location = new System.Drawing.Point(351, 9);
             this.reportButtonStorage.Name = "reportButtonStorage";
             this.reportButtonStorage.Size = new System.Drawing.Size(119, 33);
             this.reportButtonStorage.TabIndex = 4;
@@ -149,7 +158,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(434, 9);
+            this.button2.Location = new System.Drawing.Point(476, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 33);
             this.button2.TabIndex = 5;
@@ -184,7 +193,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(559, 11);
+            this.label1.Location = new System.Drawing.Point(601, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 13);
             this.label1.TabIndex = 6;
@@ -192,7 +201,7 @@
             // 
             // daudzumsUnder
             // 
-            this.daudzumsUnder.Location = new System.Drawing.Point(562, 24);
+            this.daudzumsUnder.Location = new System.Drawing.Point(604, 24);
             this.daudzumsUnder.Name = "daudzumsUnder";
             this.daudzumsUnder.Size = new System.Drawing.Size(100, 20);
             this.daudzumsUnder.TabIndex = 7;
@@ -202,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 471);
+            this.ClientSize = new System.Drawing.Size(901, 622);
             this.Controls.Add(this.daudzumsUnder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -214,6 +223,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Reports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Reports_FormClosing);
             this.Load += new System.EventHandler(this.Reports_Load);
@@ -253,5 +263,6 @@
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox daudzumsUnder;
+        private System.Windows.Forms.ToolStripMenuItem galvenāLapaToolStripMenuItem;
     }
 }

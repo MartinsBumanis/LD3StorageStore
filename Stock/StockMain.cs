@@ -12,7 +12,7 @@ namespace Stock
 {
     public partial class StockMain : Form
     {
-        private int childFormNumber = 0;
+       
 
         public StockMain()
         {
@@ -51,6 +51,14 @@ namespace Stock
         private void button2_Click(object sender, EventArgs e)
         {
             Noliktava pro = new Noliktava();
+            // pro.MdiParent = this;
+            this.Hide();
+            pro.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Reports pro = new Reports();
             // pro.MdiParent = this;
             this.Hide();
             pro.Show();
