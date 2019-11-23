@@ -28,5 +28,23 @@ namespace Stock
             this.noliktavaTableAdapter.Fill(this.stockDataSet1.Noliktava);
 
         }
+
+        private void atskaitesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reports pro = new Reports();
+            // pro.MdiParent = this;
+            this.Hide();
+            pro.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Noliktava_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

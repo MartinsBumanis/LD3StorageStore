@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produkti));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +43,13 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.produktaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produktaVardsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veidsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daudzumsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.piegadatajsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derigumaTerminsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produktiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockDataSet = new Stock.StockDataSet();
             this.produktiTableAdapter = new Stock.StockDataSetTableAdapters.ProduktiTableAdapter();
@@ -50,16 +58,13 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.produktaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produktaVardsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veidsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.daudzumsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.piegadatajsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.derigumaTerminsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.atskaiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -183,6 +188,49 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(740, 279);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // produktaIDDataGridViewTextBoxColumn
+            // 
+            this.produktaIDDataGridViewTextBoxColumn.DataPropertyName = "ProduktaID";
+            this.produktaIDDataGridViewTextBoxColumn.HeaderText = "ProduktaID";
+            this.produktaIDDataGridViewTextBoxColumn.Name = "produktaIDDataGridViewTextBoxColumn";
+            // 
+            // produktaVardsDataGridViewTextBoxColumn
+            // 
+            this.produktaVardsDataGridViewTextBoxColumn.DataPropertyName = "ProduktaVards";
+            this.produktaVardsDataGridViewTextBoxColumn.HeaderText = "ProduktaVards";
+            this.produktaVardsDataGridViewTextBoxColumn.Name = "produktaVardsDataGridViewTextBoxColumn";
+            // 
+            // veidsDataGridViewTextBoxColumn
+            // 
+            this.veidsDataGridViewTextBoxColumn.DataPropertyName = "Veids";
+            this.veidsDataGridViewTextBoxColumn.HeaderText = "Veids";
+            this.veidsDataGridViewTextBoxColumn.Name = "veidsDataGridViewTextBoxColumn";
+            // 
+            // cenaDataGridViewTextBoxColumn
+            // 
+            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
+            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
+            // 
+            // daudzumsDataGridViewTextBoxColumn
+            // 
+            this.daudzumsDataGridViewTextBoxColumn.DataPropertyName = "Daudzums";
+            this.daudzumsDataGridViewTextBoxColumn.HeaderText = "Daudzums";
+            this.daudzumsDataGridViewTextBoxColumn.Name = "daudzumsDataGridViewTextBoxColumn";
+            // 
+            // piegadatajsDataGridViewTextBoxColumn
+            // 
+            this.piegadatajsDataGridViewTextBoxColumn.DataPropertyName = "Piegadatajs";
+            this.piegadatajsDataGridViewTextBoxColumn.HeaderText = "Piegadatajs";
+            this.piegadatajsDataGridViewTextBoxColumn.Name = "piegadatajsDataGridViewTextBoxColumn";
+            // 
+            // derigumaTerminsDataGridViewTextBoxColumn
+            // 
+            this.derigumaTerminsDataGridViewTextBoxColumn.DataPropertyName = "DerigumaTermins";
+            this.derigumaTerminsDataGridViewTextBoxColumn.HeaderText = "DerigumaTermins";
+            this.derigumaTerminsDataGridViewTextBoxColumn.Name = "derigumaTerminsDataGridViewTextBoxColumn";
             // 
             // produktiBindingSource
             // 
@@ -243,47 +291,30 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // produktaIDDataGridViewTextBoxColumn
+            // menuStrip1
             // 
-            this.produktaIDDataGridViewTextBoxColumn.DataPropertyName = "ProduktaID";
-            this.produktaIDDataGridViewTextBoxColumn.HeaderText = "ProduktaID";
-            this.produktaIDDataGridViewTextBoxColumn.Name = "produktaIDDataGridViewTextBoxColumn";
+            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1098, 24);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // produktaVardsDataGridViewTextBoxColumn
+            // menuStrip2
             // 
-            this.produktaVardsDataGridViewTextBoxColumn.DataPropertyName = "ProduktaVards";
-            this.produktaVardsDataGridViewTextBoxColumn.HeaderText = "ProduktaVards";
-            this.produktaVardsDataGridViewTextBoxColumn.Name = "produktaVardsDataGridViewTextBoxColumn";
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atskaiteToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1098, 24);
+            this.menuStrip2.TabIndex = 21;
+            this.menuStrip2.Text = "menuStrip2";
             // 
-            // veidsDataGridViewTextBoxColumn
+            // atskaiteToolStripMenuItem
             // 
-            this.veidsDataGridViewTextBoxColumn.DataPropertyName = "Veids";
-            this.veidsDataGridViewTextBoxColumn.HeaderText = "Veids";
-            this.veidsDataGridViewTextBoxColumn.Name = "veidsDataGridViewTextBoxColumn";
-            // 
-            // cenaDataGridViewTextBoxColumn
-            // 
-            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
-            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
-            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
-            // 
-            // daudzumsDataGridViewTextBoxColumn
-            // 
-            this.daudzumsDataGridViewTextBoxColumn.DataPropertyName = "Daudzums";
-            this.daudzumsDataGridViewTextBoxColumn.HeaderText = "Daudzums";
-            this.daudzumsDataGridViewTextBoxColumn.Name = "daudzumsDataGridViewTextBoxColumn";
-            // 
-            // piegadatajsDataGridViewTextBoxColumn
-            // 
-            this.piegadatajsDataGridViewTextBoxColumn.DataPropertyName = "Piegadatajs";
-            this.piegadatajsDataGridViewTextBoxColumn.HeaderText = "Piegadatajs";
-            this.piegadatajsDataGridViewTextBoxColumn.Name = "piegadatajsDataGridViewTextBoxColumn";
-            // 
-            // derigumaTerminsDataGridViewTextBoxColumn
-            // 
-            this.derigumaTerminsDataGridViewTextBoxColumn.DataPropertyName = "DerigumaTermins";
-            this.derigumaTerminsDataGridViewTextBoxColumn.HeaderText = "DerigumaTermins";
-            this.derigumaTerminsDataGridViewTextBoxColumn.Name = "derigumaTerminsDataGridViewTextBoxColumn";
+            this.atskaiteToolStripMenuItem.Name = "atskaiteToolStripMenuItem";
+            this.atskaiteToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.atskaiteToolStripMenuItem.Text = "Atskaite";
+            this.atskaiteToolStripMenuItem.Click += new System.EventHandler(this.atskaiteToolStripMenuItem_Click);
             // 
             // Produkti
             // 
@@ -308,6 +339,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Produkti";
             this.Text = "Veikala Produkti";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Products_FormClosing);
@@ -315,6 +350,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +387,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn daudzumsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn piegadatajsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn derigumaTerminsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem atskaiteToolStripMenuItem;
     }
 }

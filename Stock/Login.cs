@@ -82,5 +82,10 @@ namespace Stock
                 loginButton_Click(sender, e);
             }
         }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

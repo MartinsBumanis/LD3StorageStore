@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Noliktava));
             this.produktiTableAdapter = new Stock.StockDataSetTableAdapters.ProduktiTableAdapter();
             this.produktiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockDataSet = new Stock.StockDataSet();
@@ -48,14 +49,18 @@
             this.produktaVardsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produktaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stockDataSet1 = new Stock.StockDataSet1();
             this.noliktavaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockDataSet1 = new Stock.StockDataSet1();
             this.noliktavaTableAdapter = new Stock.StockDataSet1TableAdapters.NoliktavaTableAdapter();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.atskaitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.produktiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noliktavaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet1)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // produktiTableAdapter
@@ -206,19 +211,45 @@
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // stockDataSet1
-            // 
-            this.stockDataSet1.DataSetName = "StockDataSet1";
-            this.stockDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // noliktavaBindingSource
             // 
             this.noliktavaBindingSource.DataMember = "Noliktava";
             this.noliktavaBindingSource.DataSource = this.stockDataSet1;
             // 
+            // stockDataSet1
+            // 
+            this.stockDataSet1.DataSetName = "StockDataSet1";
+            this.stockDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // noliktavaTableAdapter
             // 
             this.noliktavaTableAdapter.ClearBeforeFill = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(962, 24);
+            this.menuStrip1.TabIndex = 32;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atskaitesToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(962, 24);
+            this.menuStrip2.TabIndex = 33;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // atskaitesToolStripMenuItem
+            // 
+            this.atskaitesToolStripMenuItem.Name = "atskaitesToolStripMenuItem";
+            this.atskaitesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.atskaitesToolStripMenuItem.Text = "Atskaites";
+            this.atskaitesToolStripMenuItem.Click += new System.EventHandler(this.atskaitesToolStripMenuItem_Click);
             // 
             // Noliktava
             // 
@@ -236,14 +267,21 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Noliktava";
             this.Text = "Noliktava";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Noliktava_FormClosing);
             this.Load += new System.EventHandler(this.Noliktava_Load);
             ((System.ComponentModel.ISupportInitialize)(this.produktiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noliktavaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet1)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +310,8 @@
         private StockDataSet1 stockDataSet1;
         private System.Windows.Forms.BindingSource noliktavaBindingSource;
         private StockDataSet1TableAdapters.NoliktavaTableAdapter noliktavaTableAdapter;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem atskaitesToolStripMenuItem;
     }
 }

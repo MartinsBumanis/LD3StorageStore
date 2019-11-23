@@ -124,5 +124,18 @@ namespace Stock
 
             
         }
+
+        private void atskaiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reports pro = new Reports();
+            // pro.MdiParent = this;
+            this.Hide();
+            pro.Show();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
