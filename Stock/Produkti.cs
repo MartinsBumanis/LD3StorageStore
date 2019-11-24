@@ -100,7 +100,10 @@ namespace Stock
             connection.Close();
 
             dataGridView1.DataSource = ds.Tables[0];
-           
+            int rowCountData = dataGridView1.RowCount;
+            // rowCountData--;
+            textBox1.Text = rowCountData.ToString();
+
 
         }
 
@@ -133,7 +136,10 @@ namespace Stock
                 connection.Close();
 
                 dataGridView1.DataSource = ds.Tables[0];
-            
+            int rowCountData = dataGridView1.RowCount;
+            // rowCountData--;
+            textBox1.Text = rowCountData.ToString();
+
 
         }
 
@@ -167,6 +173,16 @@ namespace Stock
             StockMain pro = new StockMain();
             this.Hide();
             pro.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+           int rowCountData =  dataGridView1.RowCount;
+            rowCountData--;
+            textBox1.Text = rowCountData.ToString();
+          
+         
         }
     }
 }

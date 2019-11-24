@@ -63,5 +63,12 @@ namespace Stock
             this.Hide();
             pro.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Login pro = new Login();
+            this.Hide();
+            pro.Show();
+        }
     }
 }

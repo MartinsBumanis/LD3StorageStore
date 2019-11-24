@@ -14,11 +14,11 @@ namespace Stock
 {
     public partial class Noliktava : Form
     {
+       
         DataSet ds = new DataSet();
         public Noliktava()
         {
             InitializeComponent();
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,6 +30,7 @@ namespace Stock
         {
             // TODO: This line of code loads data into the 'stockDataSet1.Noliktava' table. You can move, or remove it, as needed.
             this.noliktavaTableAdapter.Fill(this.stockDataSet1.Noliktava);
+;
 
         }
 
@@ -79,24 +80,28 @@ namespace Stock
           ('" + textBox1.Text + "','"
             + textBox2.Text + "','"
             + textBox6.Text + "','"
-            + dateStringDb + "')", con);
+            + dateStringDb + "','"
+            + textBox3.Text+ "')", con);
             cmd.ExecuteNonQuery();
             con.Close();
             dataGridView1.DataSource = null;
             string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
             string sql = @"SELECT [ProduktaID]
       ,[ProduktaVards]
-      ,[Veids]
-      ,[Cena]
       ,[Daudzums]
-      ,[Piegadatajs]
       ,[DerigumaTermins]
-  FROM[dbo].[Produkti]";
+      ,[Veids]
+  FROM [dbo].[Noliktava]";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             connection.Open();
             dataadapter.Fill(ds, "Noliktava");
             connection.Close();
+
+            dataGridView1.DataSource = ds.Tables[0];
+            int rowCountData = dataGridView1.RowCount;
+            // rowCountData--;
+            textBox1.Text = rowCountData.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -119,6 +124,9 @@ namespace Stock
             connection.Close();
 
             dataGridView1.DataSource = ds.Tables[0];
+            int rowCountData = dataGridView1.RowCount;
+            // rowCountData--;
+            textBox1.Text = rowCountData.ToString();
         }
 
         private void galvenāLapaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -132,5 +140,14 @@ namespace Stock
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int rowCountData = dataGridView1.RowCount;
+           // rowCountData--;
+            textBox1.Text = rowCountData.ToString();
+        }
+
+      
     }
 }
