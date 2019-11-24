@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,11 +61,14 @@ namespace Stock
         private void button1_Click(object sender, EventArgs e)
         {
 
-
+            dataGridView1.DataSource = null;
+            ds.Reset();
+            dataGridView1.Update();
+            dataGridView1.RefreshEdit();
             SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
             con.Open();
 
-
+            string dateStringDb = dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             SqlCommand cmd = new SqlCommand(@"INSERT INTO[dbo].[Noliktava]
         ([ProduktaID]
           ,[ProduktaVards]
@@ -75,7 +79,7 @@ namespace Stock
           ('" + textBox1.Text + "','"
             + textBox2.Text + "','"
             + textBox6.Text + "','"
-            + "2019-10-10" + "')", con);
+            + dateStringDb + "')", con);
             cmd.ExecuteNonQuery();
             con.Close();
             dataGridView1.DataSource = null;
@@ -98,6 +102,9 @@ namespace Stock
         private void button3_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
+            ds.Reset();
+            dataGridView1.Update();
+            dataGridView1.RefreshEdit();
             string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
             string sql = @"SELECT [ProduktaID]
       ,[ProduktaVards]
@@ -119,6 +126,11 @@ namespace Stock
             StockMain pro = new StockMain();
             this.Hide();
             pro.Show();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

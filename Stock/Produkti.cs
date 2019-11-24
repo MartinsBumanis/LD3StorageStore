@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,10 +55,16 @@ namespace Stock
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            ds.Reset();
+            dataGridView1.Update();
+            dataGridView1.RefreshEdit();
+
             SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
             con.Open();
 
-
+            //var dateString = dateTimePicker1.Value.ToShortDateString();
+            var dateStringDb = dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             SqlCommand cmd = new SqlCommand(@"INSERT INTO[dbo].[Produkti]
         ([ProduktaID]
           ,[ProduktaVards]
@@ -73,7 +80,7 @@ namespace Stock
             + textBox4.Text + "','"
             + textBox6.Text + "','"
             + textBox6.Text + "','"
-            + "2019-10-10" + "')", con);
+            + dateStringDb + "')", con);
             cmd.ExecuteNonQuery();
             con.Close();
             dataGridView1.DataSource = null;
@@ -93,6 +100,7 @@ namespace Stock
             connection.Close();
 
             dataGridView1.DataSource = ds.Tables[0];
+           
 
         }
 
@@ -103,8 +111,13 @@ namespace Stock
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             dataGridView1.DataSource = null;
-               string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+            ds.Reset();
+            dataGridView1.Update();
+            dataGridView1.RefreshEdit();
+            
+            string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
                 string sql = @"SELECT [ProduktaID]
       ,[ProduktaVards]
       ,[Veids]
@@ -120,9 +133,8 @@ namespace Stock
                 connection.Close();
 
                 dataGridView1.DataSource = ds.Tables[0];
-
-
             
+
         }
 
         private void atskaiteToolStripMenuItem_Click(object sender, EventArgs e)
