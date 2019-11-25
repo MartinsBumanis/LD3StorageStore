@@ -107,40 +107,48 @@ namespace Stock
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string currentReport = this.reportViewer1.LocalReport.ReportEmbeddedResource;
-          //  string ctrlName = ((Control)reportViewer1.LocalReport.DataSources).Name;
-          //  reportViewer1.Reset();
-           // reportViewer1.LocalReport.DataSources.Clear();
-            SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
-            // SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [dbo].[Produkti] WHERE Daudzums<=" +daudzumsUnder.Text+"", con);
-
-
-
-            if (currentReport == "Stock.ReportSumNoliktava.rdlc")
+            try
             {
-                SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [dbo].[Noliktava] WHERE Daudzums<=" + daudzumsUnder.Text + "", con);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                string currentReport = this.reportViewer1.LocalReport.ReportEmbeddedResource;
+                //  string ctrlName = ((Control)reportViewer1.LocalReport.DataSources).Name;
+                //  reportViewer1.Reset();
+                // reportViewer1.LocalReport.DataSources.Clear();
+                SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+                // SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [dbo].[Produkti] WHERE Daudzums<=" +daudzumsUnder.Text+"", con);
 
-                ReportDataSource rds = new ReportDataSource("ReportSumNoliktava", dt);
-                reportViewer1.LocalReport.ReportEmbeddedResource = "Stock.ReportSumNoliktava.rdlc";
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(rds);
-                this.reportViewer1.RefreshReport();
-              
+
+
+                if (currentReport == "Stock.ReportSumNoliktava.rdlc")
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [dbo].[Noliktava] WHERE Daudzums<=" + daudzumsUnder.Text + "", con);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    ReportDataSource rds = new ReportDataSource("ReportSumNoliktava", dt);
+                    reportViewer1.LocalReport.ReportEmbeddedResource = "Stock.ReportSumNoliktava.rdlc";
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+                    this.reportViewer1.RefreshReport();
+
+                }
+                else
+                {
+                    SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [dbo].[Produkti] WHERE Daudzums<=" + daudzumsUnder.Text + "", con);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    ReportDataSource rds = new ReportDataSource("ReportSumProdukti", dt);
+                    reportViewer1.LocalReport.ReportEmbeddedResource = "Stock.ReportSumProdukti.rdlc";
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+                    this.reportViewer1.RefreshReport();
+
+                }
             }
-            else
+            catch(Exception ex)
             {
-                SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [dbo].[Produkti] WHERE Daudzums<=" + daudzumsUnder.Text + "", con);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                MessageBox.Show("Nepareizi ievadīts skaitlis.", "Datu meklēšana neveiksmīga", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                ReportDataSource rds = new ReportDataSource("ReportSumProdukti", dt);
-                reportViewer1.LocalReport.ReportEmbeddedResource = "Stock.ReportSumProdukti.rdlc";
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(rds);
-                this.reportViewer1.RefreshReport();
-                
             }
 
 
