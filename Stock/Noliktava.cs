@@ -61,16 +61,17 @@ namespace Stock
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dataGridView1.DataSource = null;
+                ds.Reset();
+                dataGridView1.Update();
+                dataGridView1.RefreshEdit();
+                SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+                con.Open();
 
-            dataGridView1.DataSource = null;
-            ds.Reset();
-            dataGridView1.Update();
-            dataGridView1.RefreshEdit();
-            SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
-            con.Open();
-
-            string dateStringDb = dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO[dbo].[Noliktava]
+                string dateStringDb = dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                SqlCommand cmd = new SqlCommand(@"INSERT INTO[dbo].[Noliktava]
         ([ProduktaID]
           ,[ProduktaVards]
           ,[Daudzums]
@@ -78,30 +79,36 @@ namespace Stock
           ,[Veids])
     VALUES
           ('" + textBox1.Text + "','"
-            + textBox2.Text + "','"
-            + textBox6.Text + "','"
-            + dateStringDb + "','"
-            + textBox3.Text+ "')", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            dataGridView1.DataSource = null;
-            string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
-            string sql = @"SELECT [ProduktaID]
+                + textBox2.Text + "','"
+                + textBox6.Text + "','"
+                + dateStringDb + "','"
+                + textBox3.Text + "')", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                dataGridView1.DataSource = null;
+                string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+                string sql = @"SELECT [ProduktaID]
       ,[ProduktaVards]
       ,[Daudzums]
       ,[DerigumaTermins]
       ,[Veids]
   FROM [dbo].[Noliktava]";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
-            connection.Open();
-            dataadapter.Fill(ds, "Noliktava");
-            connection.Close();
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
+                connection.Open();
+                dataadapter.Fill(ds, "Noliktava");
+                connection.Close();
 
-            dataGridView1.DataSource = ds.Tables[0];
-            int rowCountData = dataGridView1.RowCount;
-            // rowCountData--;
-            textBox1.Text = rowCountData.ToString();
+                dataGridView1.DataSource = ds.Tables[0];
+                int rowCountData = dataGridView1.RowCount;
+                // rowCountData--;
+                textBox1.Text = rowCountData.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nepareizi ievaddati", "Datu pievienošana neveiksmīga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

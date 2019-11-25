@@ -55,17 +55,19 @@ namespace Stock
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            ds.Reset();
-            dataGridView1.Update();
-            dataGridView1.RefreshEdit();
+            try
+            {
+                dataGridView1.DataSource = null;
+                ds.Reset();
+                dataGridView1.Update();
+                dataGridView1.RefreshEdit();
 
-            SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
-            con.Open();
+                SqlConnection con = new SqlConnection("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+                con.Open();
 
-            //var dateString = dateTimePicker1.Value.ToShortDateString();
-            var dateStringDb = dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO[dbo].[Produkti]
+                //var dateString = dateTimePicker1.Value.ToShortDateString();
+                var dateStringDb = dateTimePicker1.Value.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                SqlCommand cmd = new SqlCommand(@"INSERT INTO[dbo].[Produkti]
         ([ProduktaID]
           ,[ProduktaVards]
           ,[Veids]
@@ -75,52 +77,16 @@ namespace Stock
           ,[DerigumaTermins])
     VALUES
           ('" + textBox1.Text + "','"
-            + textBox2.Text + "','"
-            + textBox5.Text + "','"
-            + textBox4.Text + "','"
-            + textBox6.Text + "','"
-            + textBox6.Text + "','"
-            + dateStringDb + "')", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            dataGridView1.DataSource = null;
-            string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
-            string sql = @"SELECT [ProduktaID]
-      ,[ProduktaVards]
-      ,[Veids]
-      ,[Cena]
-      ,[Daudzums]
-      ,[Piegadatajs]
-      ,[DerigumaTermins]
-  FROM[dbo].[Produkti]";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
-            connection.Open();
-            dataadapter.Fill(ds, "Produkti");
-            connection.Close();
-
-            dataGridView1.DataSource = ds.Tables[0];
-            int rowCountData = dataGridView1.RowCount;
-            // rowCountData--;
-            textBox1.Text = rowCountData.ToString();
-
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-            dataGridView1.DataSource = null;
-            ds.Reset();
-            dataGridView1.Update();
-            dataGridView1.RefreshEdit();
-            
-            string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+                + textBox2.Text + "','"
+                + textBox5.Text + "','"
+                + textBox4.Text + "','"
+                + textBox6.Text + "','"
+                + textBox6.Text + "','"
+                + dateStringDb + "')", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                dataGridView1.DataSource = null;
+                string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
                 string sql = @"SELECT [ProduktaID]
       ,[ProduktaVards]
       ,[Veids]
@@ -136,10 +102,52 @@ namespace Stock
                 connection.Close();
 
                 dataGridView1.DataSource = ds.Tables[0];
-            int rowCountData = dataGridView1.RowCount;
-            // rowCountData--;
-            textBox1.Text = rowCountData.ToString();
+                int rowCountData = dataGridView1.RowCount;
+                // rowCountData--;
+                textBox1.Text = rowCountData.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Nepareizi ievaddati", "Datu pievienošana neveiksmīga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
 
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
+                dataGridView1.DataSource = null;
+                ds.Reset();
+                dataGridView1.Update();
+                dataGridView1.RefreshEdit();
+
+                string connectionString = ("Data Source = localhost; Initial Catalog = Stock; Integrated Security = True");
+                string sql = @"SELECT [ProduktaID]
+      ,[ProduktaVards]
+      ,[Veids]
+      ,[Cena]
+      ,[Daudzums]
+      ,[Piegadatajs]
+      ,[DerigumaTermins]
+  FROM[dbo].[Produkti]";
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
+                connection.Open();
+                dataadapter.Fill(ds, "Produkti");
+                connection.Close();
+
+                dataGridView1.DataSource = ds.Tables[0];
+                int rowCountData = dataGridView1.RowCount;
+                // rowCountData--;
+                textBox1.Text = rowCountData.ToString();
+            
 
         }
 

@@ -94,6 +94,7 @@ C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\bin\Debug\pt\Microsoft.Repor
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.csprojAssemblyReference.cache
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.Greeting.resources
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.Login.resources
 C:\Users\Martins\Source\Repos\LD3StorageStore\Stock\obj\Debug\Stock.Noliktava.resources
